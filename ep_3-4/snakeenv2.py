@@ -65,7 +65,7 @@ class SnekEnv(gym.Env):
         if self.snake_head == self.apple_position:
             self.apple_position, score = collision_with_apple(self.apple_position, self.score)
             self.snake_position.insert(0,list(self.snake_head))
-            apple_reward = 10000
+            apple_reward = 1000
 
         else:
             self.snake_position.insert(0,list(self.snake_head))
@@ -111,9 +111,9 @@ class SnekEnv(gym.Env):
 
         #--------------------------REWARDS----------------------------------
         if apple_dir:
-            dir_reward = 10
+            dir_reward = 1
         else:
-            dir_reward = -10
+            dir_reward = -2
         if self.done:
             self.reward = -100
         else:
@@ -159,7 +159,7 @@ class SnekEnv(gym.Env):
 
     def render(self):
         cv2.imshow('a', self.img)
-        cv2.waitKey(500)
+        cv2.waitKey(100)
     
         self.img = np.zeros((500,500,3),dtype='uint8')
         # Display Apple
