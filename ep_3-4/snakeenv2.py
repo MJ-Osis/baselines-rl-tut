@@ -111,9 +111,9 @@ class SnekEnv(gym.Env):
 
         #--------------------------REWARDS----------------------------------
         if apple_dir:
-            dir_reward = 1
+            dir_reward = 0
         else:
-            dir_reward = -2
+            dir_reward = -1
         if self.done:
             self.reward = -100
         else:
