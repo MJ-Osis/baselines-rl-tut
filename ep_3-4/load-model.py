@@ -7,7 +7,7 @@ env = SnekEnv()
 env.reset()
 
 model_dir = "models/PPO-v2"
-model_path = f"{model_dir}/900000"
+model_path = f"{model_dir}/1300000"
 
 model= PPO.load(model_path, env=env)
 
